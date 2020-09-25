@@ -1,0 +1,24 @@
+
+.description{
+    transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out; 
+    -o-transition: all 1s ease-in-out; 
+    visibility: hidden;
+    position: relative;
+    z-index: -1;
+    padding: 0px 5px;
+    transform: translate(0,-150px);
+}
+
+.open{
+    visibility: visible;
+    transform: translate(0,0);
+    -webkit-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+}
+
+.p-description{
+    margin: 0px;
+}

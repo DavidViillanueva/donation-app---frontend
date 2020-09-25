@@ -1,17 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import DonationApp from './DonationApp';
+
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <DonationApp
+      expireDate = { new Date(2020,11,1)}
+      cause = {'First project React'} 
+      amount = { 10000 }
+      doners = { 0 }
+      describe = {'This project whill focus in learn how to use the framework of development React.js and the use of the technologies related'}
+    />
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+

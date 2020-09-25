@@ -1,0 +1,19 @@
+form{
+    display: flex;
+}
+
+form input{
+    flex: 1;
+}
+
+button{
+    border-radius: 7px;
+    padding: 5px;
+    font-size: 20px;
+    background: rgb(112, 178, 187);
+}
+
+button::hover{
+    cursor: pointer;
+
+}

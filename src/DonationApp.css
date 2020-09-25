@@ -1,0 +1,40 @@
+.form-donation{
+    width: 350px;
+    height: auto;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+
+}
+
+.data-block{
+    background: #368ae8;
+    border-radius: 5px;
+    padding: 10px 15px; 
+    display: grid;
+}
+
+h2{
+    margin-top: 10px;
+    text-align: center;
+}
+
+h4{
+    margin: 0px;
+}
+
+p{
+    font-size: 17px;
+}
+
+a{
+    text-align: center;
+    margin-top: 5px;
+    text-decoration: none;
+    color: wheat;
+}
+
+
