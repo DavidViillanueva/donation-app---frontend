@@ -1,68 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+App de donaciones
+Desarrollador: David Villanueva
+Fecha: 24/10/2020
 
-## Available Scripts
+src/components
+    En este directorio se encuentran los componentes que extraje para alivianar la lectura
+    y comprension del componente principal
 
-In the project directory, you can run:
+src/components/materialComponents
+    Decidi separar la implementacion de los componentes de material para evitar asi el hacer crecer
+    el archivo DonationApp.js con los seteos de estilos del componente de material
 
-### `npm start`
+src/helpers
+    Directorio donde se encuentran dos helpers utilizados para la "logica" de la app
+    se decidio tenerlo en otoros archivos para alivianar la lectura del componente principal
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+src/hooks
+    Un solo hook utilizado para poder contar la cantidad de donantes que tiene e ir actualizandolo
+    separandole la logica para poder utilizar sin entorpecer la lectura del componente principal
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+El archivo principal de inicio de la app es el index.js (src/index.js) el cual solo renderiza
+el DonationApp (tambien en src), decidi instanciarlo directamente con sus props en el index.js
+debido a que lo vi como un proyecto de prueba para el componente
 
-### `npm run build`
+###Para lanzar la app###
+    Para lanzar la app en un entorno local se debera realizar un git clone del repositorio
+    una vez en el directorio en local correr el comando 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    *npm install*
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+    Para instalar las dependencias del proyecto, una vez instaladas podemos correr:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    *npm start*
 
-### `npm run eject`
+    Para levantar el proyecto en local
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Las dependencias de este proyecto son las siguientes:
+    "@material-ui/core": "^4.11.0",  ( unica instalada de forma externa )
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.3"
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Todas las dependendicias fueron instaladas a traves del comando "create-react-app"
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Ademas se cuenta con 1 cdn a Google Fonts para las fuentes del proyecto
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet"> 

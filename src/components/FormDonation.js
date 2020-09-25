@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './FormDonation.css';
 
 const FormDonation = ({ handleSubmit, donationValue, handleChange }) => {
 
     
     return (
-        <form onSubmit={ (e) => handleSubmit(e) }>
+        <form onSubmit={ (e) => handleSubmit(e) } className="row">
             <input 
                 type="number"
                 name = "donationValue"

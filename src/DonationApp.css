@@ -30,11 +30,20 @@ p{
     font-size: 17px;
 }
 
-a{
+small{
+    cursor: pointer;
     text-align: center;
     margin-top: 5px;
     text-decoration: none;
     color: wheat;
 }
 
+
+.bottom{
+    justify-content: center;
+}
+
+.secondary-button{
+    font-size: 17px;
+}
 

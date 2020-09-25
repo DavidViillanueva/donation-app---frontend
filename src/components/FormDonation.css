@@ -1,19 +1,45 @@
-form{
+.row{
     display: flex;
+    height: 50px;
 }
 
 form input{
-    flex: 1;
+    width: 50%;
+    margin: 3px;
+    text-align: center;
+    font-size: 23px;
+    border-radius: 7px;
+    border: 0;
+}
+
+input::-webkit-inner-spin-button, 
+input::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+form input:focus-within{
+    border: 0;
+    outline: none;
 }
 
 button{
     border-radius: 7px;
     padding: 5px;
     font-size: 20px;
-    background: rgb(112, 178, 187);
+    background: rgb(63,191,191);
+    margin: 3px;
+    width: 50%;
+    color: wheat;
+    border: none;
+
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out; 
+    -o-transition: all 0.2s ease-in-out;
 }
 
-button::hover{
+button:hover{
     cursor: pointer;
-
+    background: rgb(89,161,161);
 }
