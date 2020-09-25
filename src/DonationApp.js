@@ -13,31 +13,30 @@ import AlertNegSum from './components/AlertNegSum';
 
 const DonationApp = ({ expireDate = new Date(), cause = '', amount = 0, doners = 0, describe='' }) => {
 
-    //daysLeft indica la cantidad de dias faltantes para el fin de la causa
+    //daysLeft indicate the countdown of days before the cause ending
     const daysLeft = getDaysLeft( expireDate );
-    //actualAmount indica la cantidad recolectada hasta ahora
+    //actualAmount indicate the amount collected until now
     const [actualAmount, setactualAmount] = useState( 0 );
-    //donationValue es la cantidad de dinero que dona el usuario
+    //donationValue indicate the value of the donation
     const [donationValue, setDonationValue] = useState( 0 )
-    //negativeDonation es una variable tipo bandera para mostrar o no una alerta
+    //negativeDonation flag to determinate a negative donation alert
     const [negativeDonation, setNegativeDonation] = useState(false)
-    //descriptionOpen es una variable tipo bandera para mostrar o no la descripcion de la causa
+    //descriptionOpen flag to show or not the description of the cause
     const [descriptionOpen, setdescriptionOpen] = useState(false)
-    //counterDoners mantiene la cuenta de los Donantes
+    //counterDoners to show an increment the counter of doners
     const { counter: counterDoners, increment: incrementDoners } = useCounter( doners );
 
     const handleSubmit = ( e ) => {
         e.preventDefault();
         if(donationValue > 0){
-            //si la donacion es un valor mayor a 0
             const messageConfirm = `Are you sure you want to donate ${donationValue} to the ${cause} cause?`;
             if( window.confirm(messageConfirm) ){
-                //el usuario acepta la donacion
+                //user acept the donation
                 setactualAmount( actualAmount + parseInt (donationValue) );
                 incrementDoners();
                 resetInput();
             }else{
-                //el usuario niega la donacion
+                //user denied the donation
                 resetInput();
             }
         }else{

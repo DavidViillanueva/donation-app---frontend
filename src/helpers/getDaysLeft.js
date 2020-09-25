@@ -1,23 +1,32 @@
+//author: Villanueva David
+//Date: 24/09/2020
+//This function will return the countdown in days starting the date
+//Param:
+//  FinishDate -> object of type Date with the value (yyyy,mm,dd) of the ending of counter
+//Example of use: 
+//  const daysLeft = getDaysLeft( new Date (2020,12,25) ); (days before christmas)
+
+
 const getDaysLeft = ( FinishDate ) => {
     const date = FinishDate;
     const actualDate = new Date();
     
     if(actualDate.getDate() <= date.getDate()){
-        //puede ser que el dia actual sea menor que el dia esperado 
-        //dia esperado 29 y actual 24 por ejemplo
+        //It may be that the current day is less than the expected day
+        //Expected day 29 and current 24 for example
         return date.getDate()-actualDate.getDate();
     }else{
-        //caso contrario puede ser que el dia actual sea mayor que el dia esperado
-        //dia esperado 3 y actual 29
-        //en este caso queda determinar el mes para decir la diferencia 
+        //Otherwise it may be that the current day is greater than the expected day
+        //expected day 3 and current 29
+        //in this case it remains to determine the month to tell the difference
         const actualMonth = actualDate.getMonth();
 
-        //30 dias: Abril, junio, septiembre y noviembre.
+        //30 days: Abril, junio, septiembre y noviembre.
         const thirty = [3,5,8,10]
-        //31 dias: Enero, marzo, mayo, julio, agosto, octubre y diciembre.
+        //31 days: Enero, marzo, mayo, julio, agosto, octubre y diciembre.
         const thirtyOne = [0,2,4,6,7,9,11]
-        //28 dias: febrero
-        //vamos a compensar la falta de dias determinando el mes
+        //28 days: febrero
+        //We are going to compensate for the lack of days by determining the month
         if( thirty.includes(actualMonth) ){
             return( (date.getDate()+30)-actualDate.getDate());
         }else{

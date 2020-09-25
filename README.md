@@ -1,20 +1,20 @@
-App de donaciones
-Desarrollador: David Villanueva
-Fecha: 24/10/2020
+##App de donaciones
+###Desarrollador: David Villanueva
+###Fecha: 24/10/2020
 
-src/components
+**src/components
     En este directorio se encuentran los componentes que extraje para alivianar la lectura
     y comprension del componente principal
 
-src/components/materialComponents
+**src/components/materialComponents
     Decidi separar la implementacion de los componentes de material para evitar asi el hacer crecer
     el archivo DonationApp.js con los seteos de estilos del componente de material
 
-src/helpers
+**src/helpers
     Directorio donde se encuentran dos helpers utilizados para la "logica" de la app
     se decidio tenerlo en otoros archivos para alivianar la lectura del componente principal
 
-src/hooks
+**src/hooks
     Un solo hook utilizado para poder contar la cantidad de donantes que tiene e ir actualizandolo
     separandole la logica para poder utilizar sin entorpecer la lectura del componente principal
 
