@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DonationApp test should render correctly 1`] = `
+<div
+  className="form-donation"
+>
+  <BalloonText
+    actualAmount={0}
+    amount={10000}
+  />
+  <div
+    className="data-block"
+  >
+    <h2>
+      test
+    </h2>
+    <ProgressBar
+      actualAmount={0}
+      amount={10000}
+    />
+    <h4>
+      Only 
+      6
+       day left to fund this project
+    </h4>
+    <p>
+      Join the 
+      0
+       other doners who have already support this project. Every dolar helps!
+    </p>
+    <FormDonation
+      donationValue={0}
+      handleChange={[Function]}
+      handleSubmit={[Function]}
+    />
+    <small
+      href="#"
+      onClick={[Function]}
+    >
+      Why give $
+      0
+      ?
+    </small>
+    <div
+      className="row bottom"
+    >
+      <CopyLinkButton
+        text={[Function]}
+      />
+      <button
+        className="secondary-button"
+      >
+        Go to the site!
+      </button>
+    </div>
+  </div>
+  <DescribeCause
+    describe="test"
+    open={false}
+  />
+</div>
+`;

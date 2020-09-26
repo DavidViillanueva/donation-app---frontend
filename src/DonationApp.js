@@ -1,22 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Proptypes from 'prop-types';
+
 import ProgressBar from './components/materialComponents/ProgressBar';
 import BalloonText from './components/BalloonText';
 import FormDonation from './components/FormDonation';
 import DescribeCause from './components/DescribeCause';
 import CopyLinkButton from './components/CopyLinkButton';
+import AlertNegSum from './components/AlertNegSum';
 
 import useCounter from './hooks/useCounter';
 import getDaysLeft from './helpers/getDaysLeft';
+import firebaseDB from './firebase/firebase';
 
 import './DonationApp.css';
-import AlertNegSum from './components/AlertNegSum';
 
-const DonationApp = ({ expireDate = new Date(), cause = '', amount = 0, doners = 0, describe='' }) => {
+
+const DonationApp = ({ expireDate = new Date(), cause = '', amount = 0, amountCollected = 0, doners = 0, describe='' }) => {
 
     //daysLeft indicate the countdown of days before the cause ending
     const daysLeft = getDaysLeft( expireDate );
     //actualAmount indicate the amount collected until now
-    const [actualAmount, setactualAmount] = useState( 0 );
+    const [actualAmount, setactualAmount] = useState( amountCollected );
     //donationValue indicate the value of the donation
     const [donationValue, setDonationValue] = useState( 0 )
     //negativeDonation flag to determinate a negative donation alert
@@ -25,6 +29,11 @@ const DonationApp = ({ expireDate = new Date(), cause = '', amount = 0, doners =
     const [descriptionOpen, setdescriptionOpen] = useState(false)
     //counterDoners to show an increment the counter of doners
     const { counter: counterDoners, increment: incrementDoners } = useCounter( doners );
+    //dbData to containt the data to update in every donation
+    const [dbData, setdbData] = useState({
+        amountCollected: actualAmount,
+        doners: counterDoners
+    });
 
     const handleSubmit = ( e ) => {
         e.preventDefault();
@@ -35,6 +44,10 @@ const DonationApp = ({ expireDate = new Date(), cause = '', amount = 0, doners =
                 setactualAmount( actualAmount + parseInt (donationValue) );
                 incrementDoners();
                 resetInput();
+                setdbData({
+                    amountCollected: actualAmount + parseInt (donationValue),
+                    doners: counterDoners + 1 ,
+                })
             }else{
                 //user denied the donation
                 resetInput();
@@ -52,8 +65,11 @@ const DonationApp = ({ expireDate = new Date(), cause = '', amount = 0, doners =
         setDonationValue( 0 );
     }
 
+    useEffect(() => {
+        firebaseDB.database().ref('donation').child('amountCollected').set( dbData.amountCollected );
+        firebaseDB.database().ref('/donation/').child('doners').set( dbData.doners );
+    }, [dbData])
 
-    
 
     return (
         <div className="form-donation">
@@ -112,6 +128,11 @@ const DonationApp = ({ expireDate = new Date(), cause = '', amount = 0, doners =
             />
         </div>
     )
+};
+
+DonationApp.propTypes = {
+    cause: Proptypes.string,
+
 }
 
 export default DonationApp;
