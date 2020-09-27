@@ -1,53 +1,78 @@
-##App de donaciones
-###Desarrollador: David Villanueva
-###Fecha: 24/10/2020
-
-**src/components
-    En este directorio se encuentran los componentes que extraje para alivianar la lectura
-    y comprension del componente principal
-
-**src/components/materialComponents
-    Decidi separar la implementacion de los componentes de material para evitar asi el hacer crecer
-    el archivo DonationApp.js con los seteos de estilos del componente de material
-
-**src/helpers
-    Directorio donde se encuentran dos helpers utilizados para la "logica" de la app
-    se decidio tenerlo en otoros archivos para alivianar la lectura del componente principal
-
-**src/hooks
-    Un solo hook utilizado para poder contar la cantidad de donantes que tiene e ir actualizandolo
-    separandole la logica para poder utilizar sin entorpecer la lectura del componente principal
+# Donation App
+## Dev: David Villanueva (Ronco).
+## Date: 24/10/2020.
 
 
+## Directories
+* src/components.
 
-El archivo principal de inicio de la app es el index.js (src/index.js) el cual solo renderiza
-el DonationApp (tambien en src), decidi instanciarlo directamente con sus props en el index.js
-debido a que lo vi como un proyecto de prueba para el componente
-
-###Para lanzar la app###
-    Para lanzar la app en un entorno local se debera realizar un git clone del repositorio
-    una vez en el directorio en local correr el comando 
-
-    *npm install*
-
-    Para instalar las dependencias del proyecto, una vez instaladas podemos correr:
-
-    *npm start*
-
-    Para levantar el proyecto en local
+    _In this directory are the components extracted for the descompresing of the main component._
 
 
-Las dependencias de este proyecto son las siguientes:
-    "@material-ui/core": "^4.11.0",  ( unica instalada de forma externa )
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+* src/components/materialComponents
+    
+    _I decided separate the implementation of the components of Material.ui to avoid doit bigger the main component with the set of styles._
+    
 
-Todas las dependendicias fueron instaladas a traves del comando "create-react-app"
+* src/helpers
+    
+    _In this directory are the helpers used for the "logic" in the app, I decided have in other files for help the reading of the main component._
+    
 
-Ademas se cuenta con 1 cdn a Google Fonts para las fuentes del proyecto
+* src/hooks
 
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet"> 
+    _Only one hook is used for the donor count that has the cause, with separate logic for its use without hindering the reading of the main component._
+
+
+
+
+## Deployment
+
+_The main file is index.js that only render the App component, who read the database and impact 
+those data in the Donation App component. To run this app you have to install [Node.js](https://nodejs.org/es/) in you pc_
+
+
+
+
+### To launch the app in a local enviroment should downlooad the project, and go to the path in your terminal. Once there run next commands
+    
+    
+    $ npm install
+
+    //to install the dependencies of the project
+
+    $ npm start
+
+    //to serve the project in localhost
+    
+
+
+
+## Dependencies 
+
+### This are the dependencies externs of this project, is important remind that this app was created with [create-react-app](https://create-react-app.dev/)
+
++ [Material.ui](https://material-ui.com/) - Functional components
+
+    I use Material for the progress bar because I think that was a component secondary in the app.
+
++ [Firebase](https://firebase.google.com/?gclid=Cj0KCQjwzbv7BRDIARIsAM-A6-3GcIZDY5gRt7ThGz1bP25XEJPEbOo6D-dQfMo1NDFfbRR3XEkk9-waApwmEALw_wcB) - For the database use
+
+    This is the firstime that I use Firebase honestly this is the first time that I have persistant data in a React App,
+    I decided for firebase because is a technology that I have heared mention before in conferences and just chatting with another devs.
+
+## Dev-Dependencies
+
+### This are the dev dependencies that I used for the unit of test in this project
+
++ [Enzyme](https://enzymejs.github.io/enzyme/) - For add functionalities to Jest
+  
++ [Enzyme-to-Json](https://www.npmjs.com/package/enzyme-to-json) - For the posibilitie that check the render component
+
+    This is one of my first unit of test, is someting that I'm learning and that enjoy to do.
+
+## CDN
+
+### This projects count with one CDN to Google fonts for the font
+
++ [GoogleFonts](https://fonts.google.com/)
