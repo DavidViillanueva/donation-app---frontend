@@ -12,21 +12,17 @@ exports[`DonationApp test should render correctly 1`] = `
     className="data-block"
   >
     <h2>
-      test
+      test cause
     </h2>
     <ProgressBar
       actualAmount={0}
       amount={10000}
     />
     <h4>
-      Only 
-      6
-       day left to fund this project
+      daysLeft
     </h4>
     <p>
-      Join the 
-      0
-       other doners who have already support this project. Every dolar helps!
+      doners
     </p>
     <FormDonation
       donationValue={0}
@@ -37,9 +33,7 @@ exports[`DonationApp test should render correctly 1`] = `
       href="#"
       onClick={[Function]}
     >
-      Why give $
-      0
-      ?
+      why
     </small>
     <div
       className="row bottom"
@@ -50,12 +44,12 @@ exports[`DonationApp test should render correctly 1`] = `
       <button
         className="secondary-button"
       >
-        Go to the site!
+        buttons.toPage
       </button>
     </div>
   </div>
   <DescribeCause
-    describe="test"
+    describe="describe test cause"
     open={false}
   />
 </div>

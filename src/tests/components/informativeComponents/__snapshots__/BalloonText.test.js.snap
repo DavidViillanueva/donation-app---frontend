@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BallonTex component should render correctly 1`] = `
+<div
+  className="text-alert"
+>
+  <div
+    className="indicator"
+  >
+    <span>
+       
+      balloon
+    </span>
+  </div>
+  <div
+    className="pointer"
+  />
+</div>
+`;
