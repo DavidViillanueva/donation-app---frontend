@@ -101,9 +101,11 @@ those data in the Donation App component. To run this app you have to install [N
 
 ## Conclution
 
-        I complicated with the "modeling" of components, I think is the missing experience.
-    In determinate moment I noted thath haved a component fully loaded dificul to read, I dont are conform with that but think is a practice that I can learn and perfect.
-        Something that make me feel proud is the fact that I use in this "project" technologies that 
-    I never used, and surelly have a lot of bad practices and troubles in a closely future but is something that I learn two days ago, is a result that make me feel confortly.
-        I'm shure that this mini proyect can be better but this is what can I do in this moment
-    surelly in a future I re-doit this with the knowledge that I have acquire with the days.
+ I complicated with the "modeling" of components, I think is the missing experience. In determinate moment I noted thath haved a component fully loaded dificul to read, I dont are conform with that but think is a practice that I can learn and perfect.
+
+ Something that make me feel proud is the fact that I use in this "project" technologies that I never used, and surelly have a lot of bad practices and troubles in a closely future but is something that I learn two days ago, is a result that make me feel confortly.
+
+ I'm shure that this mini proyect can be better but this is what can I do in this moment surelly in a future I re-doit this with the knowledge that I have acquire with the days.
+
+ I have a trouble with the test be the implementation of i18n, I have reading the documentation for do the test and I consider is something that take to long time and I need reading more for the test unit of this project. I don't wanna lie with my capacities, this is what can do in this point of mi carrer. Obviusly I can learn more, I can afirm that i gona learn more.
+
