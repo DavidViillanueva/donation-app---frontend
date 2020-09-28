@@ -1,8 +1,14 @@
 import React,{ useState, useEffect } from 'react';
 
 import DonationApp from './DonationApp';
+import LanguageSelector from './components/languageSelector/LanguageSelector';
 
 import firebaseDB from './firebase/firebase';
+
+import './config/i18n-config';
+import Loader from './components/materialComponents/Loader';
+
+
 
 const App = () => {
     const [ state, setState] = useState({
@@ -21,6 +27,8 @@ const App = () => {
         }
     });
 
+    const [lang, setLang] = useState('en');
+
     useEffect(()=>{
         firebaseDB.database().ref('/donation/').once('value', ( snap ) =>{
             setState({
@@ -34,10 +42,11 @@ const App = () => {
     const { data } = state;
     const { amount, amountCollected, cause, doners, describe, expDate } = data;
 
+
     return (
         <div>
             {state.loading ?
-                <p>loading</p>
+                <Loader active={ state.loading }/> 
             :
                 <DonationApp
                 expireDate = { new Date(expDate.year,expDate.month,expDate.day) }
@@ -46,9 +55,11 @@ const App = () => {
                 amountCollected = { amountCollected }
                 doners = { doners }
                 describe = { describe }
+                lang= {lang}
                 />
             }
             
+            <LanguageSelector set={ (x) => setLang(x) } />
         </div>
     )
 }

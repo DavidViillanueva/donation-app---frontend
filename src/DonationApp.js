@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import Proptypes from 'prop-types';
 
 import ProgressBar from './components/materialComponents/ProgressBar';
-import BalloonText from './components/BalloonText';
-import FormDonation from './components/FormDonation';
-import DescribeCause from './components/DescribeCause';
-import CopyLinkButton from './components/CopyLinkButton';
-import AlertNegSum from './components/AlertNegSum';
+import FormDonation from './components/interactiveComponents/FormDonation';
+import CopyLinkButton from './components/interactiveComponents/CopyLinkButton';
+import BalloonText from './components/informativeComponents/BalloonText';
+import DescribeCause from './components/informativeComponents/DescribeCause';
+import AlertNegSum from './components/informativeComponents/AlertNegSum';
 
 import useCounter from './hooks/useCounter';
 import getDaysLeft from './helpers/getDaysLeft';
@@ -15,7 +16,10 @@ import firebaseDB from './firebase/firebase';
 import './DonationApp.css';
 
 
-const DonationApp = ({ expireDate = new Date(), cause = '', amount = 0, amountCollected = 0, doners = 0, describe='' }) => {
+const DonationApp = ({ expireDate = new Date(), cause = '', amount = 0, amountCollected = 0, doners = 0, describe='', lang }) => {
+
+    const { t , i18n} = useTranslation();
+    
 
     //daysLeft indicate the countdown of days before the cause ending
     const daysLeft = getDaysLeft( expireDate );
@@ -70,6 +74,9 @@ const DonationApp = ({ expireDate = new Date(), cause = '', amount = 0, amountCo
         firebaseDB.database().ref('/donation/').child('doners').set( dbData.doners );
     }, [dbData])
 
+    useEffect(() => {
+        i18n.changeLanguage(lang);
+    },[lang,i18n])
 
     return (
         <div className="form-donation">
@@ -77,6 +84,7 @@ const DonationApp = ({ expireDate = new Date(), cause = '', amount = 0, amountCo
             <BalloonText 
                 amount = { amount }
                 actualAmount = { actualAmount }
+                lang = { lang }
             />
 
             <div className="data-block">
@@ -87,24 +95,25 @@ const DonationApp = ({ expireDate = new Date(), cause = '', amount = 0, amountCo
                 {negativeDonation &&
                     <AlertNegSum />
                 }
-                <h4>Only {daysLeft} day left to fund this project</h4>
+
+                <h4>{t( 'daysLeft' , { days: daysLeft })}</h4>
                 
                 <p>
-                    Join the { counterDoners } other doners who have already support this project. 
-                    Every dolar helps!          
+                    {t('doners',{ counterDoners: counterDoners })}          
                 </p>
 
                 <FormDonation 
                     handleSubmit = { handleSubmit }
                     donationValue = { donationValue }
                     handleChange = { handleChange }
+                    lang = { lang }
                 />
 
                 <small
                     onClick={() => setdescriptionOpen(!descriptionOpen) }
                     href='#'
                 >
-                    Why give ${ donationValue }?
+                    {t('why',{ amount: donationValue })}
                 </small>
 
                 <div className="row bottom">
@@ -113,10 +122,11 @@ const DonationApp = ({ expireDate = new Date(), cause = '', amount = 0, amountCo
                         text = { () => {
                             return (window.location.href)    
                         }}
+                        lang = { lang }
                     />
                     
                     <button className="secondary-button">
-                         Go to the site!
+                        { t('buttons.toPage') }
                     </button>
                 </div>
             </div>

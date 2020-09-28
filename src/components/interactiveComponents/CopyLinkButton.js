@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
-const CopyLinkButton = ({ text }) => {
+const CopyLinkButton = ({ text, lang}) => {
 
     const [copied, setCopied] = useState(false)
 
+    const { t, i18n } = useTranslation();
     const copyLinkToClipboard = () => {
         //debemos crear un campo de texto "flotante" para poder seleccionarlo 
         //y copiar su contenido con el execCommands
@@ -15,6 +17,9 @@ const CopyLinkButton = ({ text }) => {
         textField.remove()
         setCopied(true);
     }
+    useEffect(() => {
+        i18n.changeLanguage(lang)
+    }, [lang,i18n])
 
     return (
         <button 
@@ -22,9 +27,9 @@ const CopyLinkButton = ({ text }) => {
             onClick={ copyLinkToClipboard }
         >
             {copied ?
-                <span>Copied!</span>
+                <span>{ t('buttons.copied') }</span>
             :
-                <span>Tell your Friends</span>
+                <span>{ t('buttons.share') }</span>
             }
         </button>
     )

@@ -1,9 +1,15 @@
-import React from 'react';
+import React,{ useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import './FormDonation.css';
 
-const FormDonation = ({ handleSubmit, donationValue, handleChange }) => {
-
+const FormDonation = ({ handleSubmit, donationValue, handleChange, lang }) => {
+    const { t, i18n } = useTranslation();
     
+    useEffect( () => {
+        i18n.changeLanguage(lang)
+    },[ lang ,i18n])
+
     return (
         <form onSubmit={ (e) => handleSubmit(e) } className="row">
             <input 
@@ -16,7 +22,7 @@ const FormDonation = ({ handleSubmit, donationValue, handleChange }) => {
             <button 
                 type="submit"
             >
-                Give Now!
+                { t('buttons.giveNow') }
             </button>
         </form>
     )
