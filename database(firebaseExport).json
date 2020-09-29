@@ -1,0 +1,14 @@
+{
+  "donation" : {
+    "amount" : 10000,
+    "amountCollected" : 0,
+    "cause" : "First project React",
+    "describe" : "This project whill focus in learn how to use the framework of development React.js and the use of the technologies related",
+    "doners" : 0,
+    "expDate" : {
+      "day" : 10,
+      "month" : 11,
+      "year" : 2020
+    }
+  }
+}

@@ -75,8 +75,9 @@ those data in the Donation App component. To run this app you have to install [N
 
 + [Firebase](https://firebase.google.com/?gclid=Cj0KCQjwzbv7BRDIARIsAM-A6-3GcIZDY5gRt7ThGz1bP25XEJPEbOo6D-dQfMo1NDFfbRR3XEkk9-waApwmEALw_wcB) - For the database use
 
-    This is the firstime that I use Firebase honestly this is the first time that I have persistant data in a React App,
+    This is the firstime that I use Firebase honestly this is the first time that I have persistant data in a React App.
     I decided for firebase because is a technology that I have heared mention before in conferences and just chatting with another devs.
+    The file "database(firebaseExport).json" is a exportation of the database in firebase
 
 + [i18next](https://www.i18next.com/) - For the translate
 
